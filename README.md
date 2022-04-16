@@ -14,10 +14,14 @@ $ docker build . -t $NAME -f $BUILD_FILE [--build-arg HOGE=hoge]
 ## docker run
 
 ```bash
-$ docker run --rm -it --mount type=bind,source=my-app,target=/code/my-app -p 8080:8080 $NAME
+$ bash run.sh
+$ bash run.sh /bin/sh
 ```
 
 ## memo
+
+```bash
 docker save react | gzip > react
 docker run -d --name react react
 docker cp cd89ac8cb142d93de1b3725fabd937c9754722e71f73aebcda825c67c41837dd:/code/my-app/src ./
+```
