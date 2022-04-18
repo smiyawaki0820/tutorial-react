@@ -1,60 +1,43 @@
-import logo from './logo.svg';
-
 import React from 'react';
-// import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom';
 
 import './App.css';
 
-/*
-const vegetables = [ 
-  '大根', '玉ねぎ', 'キャベツ', '白菜', '人参', 'トマト',
-    'きゅうり', 'かぼちゃ', 'レタス', 'もやし', 'ねぎ',
-];
 
-class Wordlist extends React.Component {
+const componentStyle = {
+    background: '#fcc',
+    margin: '5px',
+    padding: '5px',
+    borderRadius: '5px'
+};
 
-  onWordSelected(e) {
-    console.log(e.target.innerText);
-  }
 
-  render() {
-    return (
-      <div className="wordfont">
-        {
-          vegetables.map(
-            word => 
-            <span key={word} onClick={this.onWordSelected}>{word}</span>
-          )  
-        }
-      </div>
-    );
-  }
-
+// コンポーネント
+function Welcome(props) {
+    return <h1 style={ componentStyle }>Hello, { props.name }</h1>;
 }
 
-export default Wordlist
-*/
-
+// コンポーネント
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-          hogehoge
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Welcome name="Sara" />
+      <Welcome name="Cahal" />
+      <Welcome name="Edite" />
     </div>
   );
 }
 
-export default App;
+// レンダリング
+function Render() {
+  ReactDOM.render(
+    <App />,
+    document.getElementById('root')
+  );
+}
+
+
+// main
+export default Render;
+
+
