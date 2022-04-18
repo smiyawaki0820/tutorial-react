@@ -1,9 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
+// import React from 'react';
+// import ReactDOM from 'react-dom';
 
 import './App.css';
 
 
+/*
 const componentStyle = {
     background: '#fcc',
     margin: '5px',
@@ -28,16 +30,75 @@ function App() {
   );
 }
 
+
 // レンダリング
-function Render() {
+class Hello extends Component {
+  constructor() {
+    super();
+    this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      power: true
+    };
+  }
+
+  handleClick() {
+    this.setState({
+      power: !this.state.power
+    });
+    alert(`button click: ${this.state.power}`);
+  }
+
+  render() {
+    return (
+      <div>
+        <App />
+        <button onClick={this.handleClick}>BUTTON</button>
+      </div>
+    );
+  }
+}
+
+function Timer() {
+  const element = (
+        <div>
+          <h1>Hello, world!</h1>
+          <h2>It is {new Date().toLocaleTimeString()}.</h2>
+        </div>
+  );
   ReactDOM.render(
-    <App />,
-    document.getElementById('root')
+        element,
+        document.getElementById('root')
   );
 }
 
+//export default Hello;
+export default setInterval(Timer, 1000);
+*/
 
-// main
-export default Render;
 
+class MyClass extends Component {
+  constructor(props) {
+    super(props);
+    this.clickButton = this.clickButton.bind(this);
+    this.state = {
+      counter: 0
+    };
+  }
+        
+  clickButton() {
+    this.setState({
+      counter: this.state.counter+1
+    });
+    alert(`counter: ${this.state.counter}`);
+  }
+          
+  render() {
+    return (
+      <div>
+        <button onClick={this.clickButton}>increment</button>
+      </div>
+    );
+  }
+}
 
+export default MyClass;

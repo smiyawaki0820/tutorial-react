@@ -31,6 +31,7 @@ $ bash run.sh /bin/sh
 #### react-scripts start
 
 - https://www.delftstack.com/ja/howto/react/react-scripts-start/#react-scripts-start
+- https://github.com/keywalker-inc/sente-ner/tree/main/Frontend/frontend_ner/README.md
 
 ```bash
 $ cat package.json
